@@ -1,1 +1,172 @@
-hello
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MWR Life – Rejoignez le Mouvement</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="navbar">
+    <div class="nav-inner">
+      <div class="logo">MWR <span>LIFE</span></div>
+      <button class="nav-cta" onclick="scrollToForm()">Rejoindre</button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-bg">
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="orb orb-3"></div>
+      <div class="grid-overlay"></div>
+    </div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">Bienvenue dans</p>
+      <h1 class="hero-title">
+        Une vie sans<br />
+        <em>limites</em>
+      </h1>
+      <p class="hero-subtitle">
+        MWR Life vous donne accès à des avantages exclusifs sur les voyages,
+        les loisirs et bien plus — tout en bâtissant une liberté financière réelle.
+      </p>
+      <button class="btn-primary" onclick="scrollToForm()">
+        Recevoir les informations
+        <span class="btn-arrow">→</span>
+      </button>
+    </div>
+    <div class="hero-scroll-hint">
+      <span></span>
+      <p>Découvrir</p>
+    </div>
+  </header>
+
+  <!-- FEATURES -->
+  <section class="features">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow">Pourquoi MWR Life</p>
+        <h2 class="section-title">Tout ce dont vous avez besoin<br /><em>pour vivre différemment</em></h2>
+      </div>
+      <div class="features-grid">
+
+        <div class="feature-card" data-delay="0">
+          <div class="feature-icon">✦</div>
+          <h3>Voyages & Économies</h3>
+          <p>Accédez à des tarifs préférentiels sur des milliers de destinations, hôtels et expériences dans le monde entier.</p>
+        </div>
+
+        <div class="feature-card" data-delay="100">
+          <div class="feature-icon">◈</div>
+          <h3>Liberté Financière</h3>
+          <p>Un modèle de revenus transparent qui récompense votre réseau et votre engagement, mois après mois.</p>
+        </div>
+
+        <div class="feature-card" data-delay="200">
+          <div class="feature-icon">⬡</div>
+          <h3>Communauté Puissante</h3>
+          <p>Rejoignez une communauté internationale de personnes ambitieuses qui s'entraident pour réussir.</p>
+        </div>
+
+        <div class="feature-card" data-delay="300">
+          <div class="feature-icon">◎</div>
+          <h3>Loisirs & Divertissement</h3>
+          <p>Cinéma, sport, restaurants, parcs d'attractions… profitez de remises exclusives au quotidien.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIAL / QUOTE -->
+  <section class="quote-section">
+    <div class="container">
+      <blockquote class="main-quote">
+        <p>« MWR Life a changé ma façon de voir la vie — plus de voyages, plus de revenus, plus de liberté. »</p>
+        <cite>— Membre MWR Life</cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- INSCRIPTION FORM -->
+  <section class="signup-section" id="signup">
+    <div class="container">
+      <div class="signup-wrapper">
+        <div class="signup-text">
+          <p class="section-eyebrow">Première étape</p>
+          <h2 class="section-title">Restez informé(e)<br /><em>sans engagement</em></h2>
+          <p class="signup-desc">
+            Inscrivez-vous et recevez toutes les informations sur MWR Life directement
+            dans votre boîte mail. Gratuit, sans engagement, sans spam.
+          </p>
+          <ul class="signup-perks">
+            <li><span>✓</span> Présentation complète de l'opportunité</li>
+            <li><span>✓</span> Témoignages de membres actifs</li>
+            <li><span>✓</span> Accès à une session d'information en ligne</li>
+            <li><span>✓</span> Contact direct avec moi pour toute question</li>
+          </ul>
+        </div>
+
+        <div class="signup-form-box">
+          <form id="signupForm" novalidate>
+            <div class="form-group">
+              <label for="firstName">Prénom</label>
+              <input type="text" id="firstName" name="firstName" placeholder="Votre prénom" required />
+              <span class="field-error" id="firstNameError"></span>
+            </div>
+            <div class="form-group">
+              <label for="lastName">Nom</label>
+              <input type="text" id="lastName" name="lastName" placeholder="Votre nom" required />
+              <span class="field-error" id="lastNameError"></span>
+            </div>
+            <div class="form-group">
+              <label for="email">Adresse e-mail</label>
+              <input type="email" id="email" name="email" placeholder="vous@exemple.com" required />
+              <span class="field-error" id="emailError"></span>
+            </div>
+            <div class="form-group">
+              <label for="phone">Téléphone <span class="optional">(optionnel)</span></label>
+              <input type="tel" id="phone" name="phone" placeholder="+33 6 00 00 00 00" />
+            </div>
+            <div class="form-check">
+              <input type="checkbox" id="consent" required />
+              <label for="consent">J'accepte de recevoir des informations sur MWR Life par e-mail. Désinscription possible à tout moment.</label>
+              <span class="field-error" id="consentError"></span>
+            </div>
+            <button type="submit" class="btn-submit" id="submitBtn">
+              <span class="btn-text">Recevoir les informations</span>
+              <span class="btn-loading" style="display:none;">Envoi en cours…</span>
+            </button>
+          </form>
+
+          <div class="success-message" id="successMessage" style="display:none;">
+            <div class="success-icon">✦</div>
+            <h3>Merci pour votre inscription !</h3>
+            <p>Vous allez recevoir un e-mail de bienvenue très prochainement. À très bientôt !</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="logo">MWR <span>LIFE</span></div>
+        <p class="footer-tagline">Vivez plus. Gagnez plus. Partagez plus.</p>
+        <p class="footer-legal">© 2025 – Site non officiel d'un membre indépendant MWR Life. Ce site a été créé à titre personnel pour partager une opportunité.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
