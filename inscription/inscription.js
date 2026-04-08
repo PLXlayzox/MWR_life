@@ -8,7 +8,7 @@
    ========================================= */
 
 const EMAILJS_PUBLIC_KEY  = 'CnKdIWI6zZlHCVB98';   // ← à remplacer
-const EMAILJS_SERVICE_ID  = 'service_q4ybsuw';   // ← à remplacer
+const EMAILJS_SERVICE_ID  = 'service_6zr9kra';   // ← à remplacer
 const EMAILJS_TEMPLATE_ID = 'mwr_life';  // ← à remplacer
 
 /* ---- Init EmailJS ---- */
