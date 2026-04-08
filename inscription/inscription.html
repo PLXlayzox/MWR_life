@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Inscription – MWR Life</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="inscription.css" />
+
+  <!-- EmailJS SDK -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+</head>
+<body class="inscription-page">
+
+  <!-- NAVBAR -->
+  <nav class="navbar scrolled">
+    <div class="nav-inner">
+      <a href="../index.html" class="logo">MWR <span>LIFE</span></a>
+      <a href="../index.html" class="nav-back">← Retour</a>
+    </div>
+  </nav>
+
+  <!-- MAIN -->
+  <main class="inscription-main">
+
+    <!-- COLONNE GAUCHE : INFO -->
+    <div class="insc-left">
+      <div class="insc-left-inner">
+        <p class="section-eyebrow">Rejoignez-nous</p>
+        <h1 class="insc-title">Recevez toutes<br /><em>les informations</em></h1>
+        <p class="insc-desc">
+          Laissez votre adresse e-mail et recevez immédiatement une présentation
+          complète de l'opportunité MWR Life. Aucun engagement, aucun spam.
+        </p>
+
+        <div class="insc-features">
+          <div class="insc-feat">
+            <span class="feat-icon">✦</span>
+            <div>
+              <strong>Présentation complète</strong>
+              <p>Découvrez comment fonctionne MWR Life et ses avantages.</p>
+            </div>
+          </div>
+          <div class="insc-feat">
+            <span class="feat-icon">◈</span>
+            <div>
+              <strong>Opportunité de revenus</strong>
+              <p>Comprenez comment générer des revenus supplémentaires.</p>
+            </div>
+          </div>
+          <div class="insc-feat">
+            <span class="feat-icon">⬡</span>
+            <div>
+              <strong>Contact direct</strong>
+              <p>Je vous réponds personnellement pour toute question.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- COLONNE DROITE : FORMULAIRE -->
+    <div class="insc-right">
+      <div class="insc-form-card">
+
+        <!-- FORMULAIRE -->
+        <form id="inscriptionForm" novalidate>
+          <h2 class="form-title">Votre inscription</h2>
+          <p class="form-subtitle">Remplissez ce formulaire et recevez les infos par mail.</p>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="firstName">Prénom <span class="req">*</span></label>
+              <input type="text" id="firstName" placeholder="Jean" required />
+              <span class="field-error" id="firstNameError"></span>
+            </div>
+            <div class="form-group">
+              <label for="lastName">Nom <span class="req">*</span></label>
+              <input type="text" id="lastName" placeholder="Dupont" required />
+              <span class="field-error" id="lastNameError"></span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Adresse e-mail <span class="req">*</span></label>
+            <input type="email" id="email" placeholder="jean@exemple.com" required />
+            <span class="field-error" id="emailError"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Téléphone <span class="optional">(optionnel)</span></label>
+            <input type="tel" id="phone" placeholder="+33 6 00 00 00 00" />
+          </div>
+
+          <div class="form-check">
+            <input type="checkbox" id="consent" required />
+            <label for="consent">
+              J'accepte de recevoir des informations sur MWR Life par e-mail.
+              Désinscription possible à tout moment.
+            </label>
+          </div>
+          <span class="field-error" id="consentError"></span>
+
+          <button type="submit" class="btn-submit" id="submitBtn">
+            <span class="btn-text">Recevoir les informations ✦</span>
+            <span class="btn-loading" style="display:none;">
+              <span class="spinner"></span> Envoi en cours…
+            </span>
+          </button>
+
+          <p class="form-note">🔒 Vos données ne sont jamais partagées ni vendues.</p>
+        </form>
+
+        <!-- SUCCÈS -->
+        <div class="success-block" id="successBlock" style="display:none;">
+          <div class="success-anim">✦</div>
+          <h2>Mail envoyé !</h2>
+          <p>
+            Bonjour <strong id="successName"></strong>, vous allez recevoir
+            toutes les informations sur MWR Life dans quelques instants.
+            Vérifiez aussi vos spams si besoin.
+          </p>
+          <a href="../index.html" class="btn-submit" style="display:inline-block; text-align:center; text-decoration:none; margin-top: 8px;">
+            ← Retour à l'accueil
+          </a>
+        </div>
+
+        <!-- ERREUR RÉSEAU -->
+        <div class="error-block" id="errorBlock" style="display:none;">
+          <p>⚠️ Une erreur est survenue. Veuillez réessayer ou me contacter directement.</p>
+          <button onclick="resetForm()" class="btn-retry">Réessayer</button>
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+
+  <script src="inscription.js"></script>
+</body>
+</html>

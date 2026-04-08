@@ -1,0 +1,282 @@
+/* =========================================
+   INSCRIPTION PAGE – CSS
+   ========================================= */
+
+body.inscription-page {
+  background: var(--dark);
+  min-height: 100dvh;
+}
+
+/* ---- NAVBAR override ---- */
+.inscription-page .navbar {
+  position: fixed;
+  background: rgba(12, 12, 14, 0.9);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  padding: 14px 0;
+}
+.inscription-page .logo {
+  text-decoration: none;
+}
+.nav-back {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  letter-spacing: 0.06em;
+  transition: color 0.2s;
+}
+.nav-back:hover { color: var(--gold); }
+
+/* ---- LAYOUT ---- */
+.inscription-main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 100dvh;
+  padding-top: 70px;
+}
+
+/* ---- LEFT PANEL ---- */
+.insc-left {
+  background: linear-gradient(135deg, var(--dark-2) 0%, var(--dark) 100%);
+  border-right: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+.insc-left::before {
+  content: '';
+  position: absolute;
+  width: 400px; height: 400px;
+  background: radial-gradient(circle, rgba(201,168,76,0.12) 0%, transparent 70%);
+  top: -80px; left: -80px;
+  border-radius: 50%;
+}
+.insc-left::after {
+  content: '';
+  position: absolute;
+  width: 300px; height: 300px;
+  background: radial-gradient(circle, rgba(201,168,76,0.07) 0%, transparent 70%);
+  bottom: 0; right: -60px;
+  border-radius: 50%;
+}
+.insc-left-inner {
+  position: relative;
+  z-index: 2;
+  padding: 60px 56px;
+  max-width: 520px;
+}
+
+.insc-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 4vw, 3.4rem);
+  font-weight: 300;
+  line-height: 1.1;
+  color: var(--text);
+  margin: 16px 0 24px;
+}
+.insc-title em { font-style: italic; color: var(--gold-light); }
+
+.insc-desc {
+  font-size: 0.95rem;
+  font-weight: 300;
+  color: var(--text-muted);
+  line-height: 1.8;
+  margin-bottom: 40px;
+}
+
+.insc-features {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.insc-feat {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+.feat-icon {
+  font-size: 1.1rem;
+  color: var(--gold);
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+.insc-feat strong {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+.insc-feat p {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+/* ---- RIGHT PANEL ---- */
+.insc-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 32px;
+  background: var(--dark);
+}
+
+.insc-form-card {
+  width: 100%;
+  max-width: 460px;
+  background: var(--dark-3);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 48px 44px;
+  box-shadow: 0 40px 100px rgba(0,0,0,0.5);
+}
+
+.form-title {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 400;
+  color: var(--text);
+  margin-bottom: 6px;
+}
+.form-subtitle {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-weight: 300;
+  margin-bottom: 32px;
+  line-height: 1.6;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.req { color: var(--gold); font-weight: 600; }
+
+/* Form check overrides for this page */
+.insc-form-card .form-check {
+  margin-top: 4px;
+  margin-bottom: 8px;
+}
+.insc-form-card #consentError {
+  display: block;
+  margin-bottom: 16px;
+}
+
+.form-note {
+  text-align: center;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 16px;
+  opacity: 0.7;
+}
+
+/* ---- SPINNER ---- */
+.spinner {
+  display: inline-block;
+  width: 14px; height: 14px;
+  border: 2px solid rgba(12,12,14,0.3);
+  border-top-color: var(--dark);
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  vertical-align: middle;
+  margin-right: 6px;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ---- SUCCESS BLOCK ---- */
+.success-block {
+  text-align: center;
+  padding: 20px 0;
+  animation: fadeUp 0.6s ease both;
+}
+.success-anim {
+  font-size: 3.5rem;
+  color: var(--gold);
+  margin-bottom: 20px;
+  display: inline-block;
+  animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+}
+@keyframes popIn {
+  from { transform: scale(0) rotate(-90deg); opacity: 0; }
+  to   { transform: scale(1) rotate(0); opacity: 1; }
+}
+.success-block h2 {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 400;
+  color: var(--text);
+  margin-bottom: 16px;
+}
+.success-block p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.8;
+  margin-bottom: 24px;
+}
+
+/* ---- ERROR BLOCK ---- */
+.error-block {
+  text-align: center;
+  padding: 20px;
+  border: 1px solid rgba(226,92,92,0.3);
+  border-radius: var(--radius);
+  background: rgba(226,92,92,0.05);
+  margin-top: 12px;
+}
+.error-block p {
+  font-size: 0.9rem;
+  color: #e25c5c;
+  margin-bottom: 16px;
+}
+.btn-retry {
+  background: transparent;
+  border: 1px solid #e25c5c;
+  color: #e25c5c;
+  padding: 10px 24px;
+  border-radius: 99px;
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.btn-retry:hover { background: #e25c5c; color: white; }
+
+/* ==========================================
+   RESPONSIVE
+   ========================================== */
+@media (max-width: 900px) {
+  .inscription-main {
+    grid-template-columns: 1fr;
+  }
+  .insc-left {
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+    padding: 0;
+  }
+  .insc-left-inner {
+    padding: 48px 24px;
+    max-width: 100%;
+  }
+  .insc-right {
+    padding: 32px 20px 60px;
+    align-items: flex-start;
+  }
+  .insc-form-card {
+    padding: 32px 24px;
+  }
+}
+
+@media (max-width: 500px) {
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+  .insc-form-card {
+    padding: 28px 18px;
+  }
+  .form-title { font-size: 1.6rem; }
+}
