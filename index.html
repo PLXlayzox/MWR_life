@@ -3,154 +3,276 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MWR Life – Rejoignez le Mouvement</title>
+  <title>Arthur Mongondry</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- NAVIGATION -->
-  <nav class="navbar">
-    <div class="nav-inner">
-      <div class="logo">MWR <span>LIFE</span></div>
-      <a href="inscription/inscription.html" class="nav-cta">Rejoindre</a>
-    </div>
+  <!-- NAV -->
+  <nav class="nav" id="navbar">
+    <div class="nav__logo">AM</div>
+    <ul class="nav__links">
+      <li><a href="#travel">Travel</a></li>
+      <li><a href="#about">À propos</a></li>
+      <li><a href="#business">Business</a></li>
+      <li><a href="#contact" class="nav__cta">Me rejoindre</a></li>
+    </ul>
+    <button class="nav__burger" id="burger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
   </nav>
 
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="#travel" onclick="closeMenu()">Travel</a></li>
+      <li><a href="#about" onclick="closeMenu()">À propos</a></li>
+      <li><a href="#business" onclick="closeMenu()">Business</a></li>
+      <li><a href="#contact" onclick="closeMenu()">Me rejoindre</a></li>
+    </ul>
+  </div>
+
   <!-- HERO -->
-  <header class="hero">
-    <div class="hero-bg">
-      <div class="orb orb-1"></div>
-      <div class="orb orb-2"></div>
-      <div class="orb orb-3"></div>
-      <div class="grid-overlay"></div>
+  <section class="hero">
+    <div class="hero__bg">
+      <div class="hero__grain"></div>
+      <div class="hero__orb hero__orb--1"></div>
+      <div class="hero__orb hero__orb--2"></div>
+      <div class="hero__orb hero__orb--3"></div>
     </div>
-    <div class="hero-content">
-      <p class="hero-eyebrow">Bienvenue dans</p>
-      <h1 class="hero-title">
-        Une vie sans<br />
-        <em>limites</em>
+    <div class="hero__content">
+      <p class="hero__eyebrow reveal">La vie sans frontières</p>
+      <h1 class="hero__title reveal reveal--delay-1">
+        Voyager.<br />
+        <em>Coacher.</em><br />
+        Vivre libre.
       </h1>
-      <p class="hero-subtitle">
-        MWR Life vous donne accès à des avantages exclusifs sur les voyages,
-        les loisirs et bien plus — tout en bâtissant une liberté financière réelle.
+      <p class="hero__sub reveal reveal--delay-2">
+        Des avantages voyages d'exception. Un business qui tourne pendant que tu explores le monde.
       </p>
-
-      <a href="inscription/inscription.html" class="btn-primary">
-        Recevoir les informations
-        <span class="btn-arrow">→</span>
-      </a>
-    </div>
-    <div class="hero-scroll-hint">
-      <span></span>
-      <p>Découvrir</p>
-    </div>
-  </header>
-
-  <!-- FEATURES -->
-  <section class="features">
-    <div class="container">
-      <div class="section-header">
-        <p class="section-eyebrow">Pourquoi MWR Life</p>
-        <h2 class="section-title">Tout ce dont vous avez besoin<br /><em>pour vivre différemment</em></h2>
+      <div class="hero__actions reveal reveal--delay-3">
+        <a href="#travel" class="btn btn--gold">Découvrir les avantages</a>
+        <a href="#about" class="btn btn--ghost">Mon histoire →</a>
       </div>
-      <div class="features-grid">
+    </div>
+    <div class="hero__scroll">
+      <span>Scroll</span>
+      <div class="hero__scroll-line"></div>
+    </div>
+    <div class="hero__destinations">
+      <span>Bali</span>
+      <span>Tokyo</span>
+      <span>Lisbonne</span>
+      <span>New York</span>
+      <span>Dubaï</span>
+    </div>
+  </section>
 
-        <div class="feature-card" data-delay="0">
-          <div class="feature-icon">✦</div>
-          <h3>Voyages & Économies</h3>
-          <p>Accédez à des tarifs préférentiels sur des milliers de destinations, hôtels et expériences dans le monde entier.</p>
+  <!-- TRAVEL SECTION -->
+  <section class="travel section" id="travel">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-tag">Avantages voyages</p>
+        <h2 class="section-title">Des avantages voyages<br /><em>qui changent tout</em></h2>
+        <p class="section-sub">Accède à des tarifs négociés inaccessibles au grand public — hôtels, vols, croisières, voitures. L'avantage du voyageur professionnel, pour tout le monde.</p>
+      </div>
+
+      <div class="travel__grid">
+        <div class="travel__card travel__card--featured reveal">
+          <div class="travel__card-icon">✈</div>
+          <h3>Vols à prix réduits</h3>
+          <p>Jusqu'à <strong>70% de réduction</strong> sur des millions de vols dans le monde entier. Les mêmes sièges, au prix des insiders.</p>
+          <div class="travel__saving">Économie moyenne : <strong>400€/vol</strong></div>
         </div>
 
-        <div class="feature-card" data-delay="100">
-          <div class="feature-icon">◈</div>
-          <h3>Liberté Financière</h3>
-          <p>Un modèle de revenus transparent qui récompense votre réseau et votre engagement, mois après mois.</p>
+        <div class="travel__card reveal reveal--delay-1">
+          <div class="travel__card-icon">🏨</div>
+          <h3>Hôtels & Resorts</h3>
+          <p>Accès à plus de <strong>700 000 hôtels</strong> — du boutique hotel au resort 5 étoiles — à des tarifs réservés aux agences.</p>
+          <div class="travel__saving">Économie moyenne : <strong>50% par nuit</strong></div>
         </div>
 
-        <div class="feature-card" data-delay="200">
-          <div class="feature-icon">⬡</div>
-          <h3>Communauté Puissante</h3>
-          <p>Rejoignez une communauté internationale de personnes ambitieuses qui s'entraident pour réussir.</p>
+        <div class="travel__card reveal reveal--delay-2">
+          <div class="travel__card-icon">🚢</div>
+          <h3>Croisières de luxe</h3>
+          <p>Des cabines luxe sur les plus grandes compagnies mondiales, à des prix inégalables. La mer comme terrain de jeu.</p>
+          <div class="travel__saving">Économie moyenne : <strong>60% par cabine</strong></div>
         </div>
 
-        <div class="feature-card" data-delay="300">
-          <div class="feature-icon">◎</div>
-          <h3>Loisirs & Divertissement</h3>
-          <p>Cinéma, sport, restaurants, parcs d'attractions… profitez de remises exclusives au quotidien.</p>
+        <div class="travel__card reveal reveal--delay-1">
+          <div class="travel__card-icon">🏠</div>
+          <h3>Villas & Condos</h3>
+          <p>Des locations privées haut de gamme à travers le monde. Piscine, vue mer, espace — sans payer le prix fort.</p>
+          <div class="travel__saving">Accès à +<strong>100 000 propriétés</strong></div>
         </div>
 
+        <div class="travel__card reveal reveal--delay-2">
+          <div class="travel__card-icon">🚗</div>
+          <h3>Location de voitures</h3>
+          <p>Les meilleurs loueurs internationaux avec des remises exclusives. Explore chaque destination à ta façon.</p>
+          <div class="travel__saving">Jusqu'à <strong>-40% sur les tarifs</strong></div>
+        </div>
+
+        <div class="travel__card travel__card--cta reveal reveal--delay-3">
+          <p class="travel__cta-label">Prêt à voyager autrement ?</p>
+          <h3>Commence dès aujourd'hui</h3>
+          <p>Dès ton premier voyage, tu rentabilises plusieurs fois ton abonnement.</p>
+          <a href="#contact" class="btn btn--gold">Commencer maintenant</a>
+        </div>
+      </div>
+
+      <!-- STATS BAND -->
+      <div class="stats-band reveal">
+        <div class="stat">
+          <span class="stat__num">700k+</span>
+          <span class="stat__label">Hôtels partenaires</span>
+        </div>
+        <div class="stat">
+          <span class="stat__num">190+</span>
+          <span class="stat__label">Pays couverts</span>
+        </div>
+        <div class="stat">
+          <span class="stat__num">-70%</span>
+          <span class="stat__label">Sur les vols</span>
+        </div>
+        <div class="stat">
+          <span class="stat__num">24/7</span>
+          <span class="stat__label">Conciergerie dédiée</span>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- TESTIMONIAL / QUOTE -->
-  <section class="quote-section">
+  <!-- ABOUT / BIO -->
+  <section class="about section" id="about">
     <div class="container">
-      <blockquote class="main-quote">
-        <p>« MWR Life a changé ma façon de voir la vie — plus de voyages, plus de revenus, plus de liberté. »</p>
-        <cite>— Membre MWR Life</cite>
-      </blockquote>
+      <div class="about__inner">
+        <div class="about__image-wrap reveal">
+          <div class="about__image-frame">
+            <img src="ressource/arthur.jpeg" alt="Arthur Mongondry" class="about__photo" />
+            <div class="about__image-badge">Coach · Nomade · Entrepreneur</div>
+          </div>
+          <div class="about__floating-card">
+            <span class="about__flag">🌍</span>
+            <div>
+              <strong>Life is global</strong>
+              <p>Business en ligne · Coaching partout</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="about__content">
+          <p class="section-tag reveal">À propos</p>
+          <h2 class="section-title reveal">Arthur<br /><em>Mongondry</em></h2>
+
+          <div class="about__text reveal">
+            <p>Je suis <strong>Arthur Mongondry</strong>, éducateur sportif passionné, actuellement en études supérieures dans le domaine du sport. Fort de mon diplôme d'éducateur sportif et de <strong>2 ans d'expérience terrain</strong>, j'ai construit un business qui me ressemble : flexible, ambitieux et sans frontières.</p>
+
+            <p>Ce qui me distingue, c'est ma vision moderne de mon métier. J'accompagne tout type de clients — débutants ou confirmés — avec un seul objectif : les aider à atteindre leurs résultats, peu importe où je me trouve dans le monde.</p>
+
+            <p>Car j'ai fait un choix clair : celui de la <strong>liberté géographique</strong>. Grâce à mon activité en ligne, je génère des revenus récurrents chaque mois tout en voyageant à travers le monde. Pour moi, le sport n'est pas seulement une passion — c'est le moteur d'une vie conçue sur mes propres termes.</p>
+
+            <blockquote class="about__quote">
+              « Peu importe ton niveau, peu importe ta localisation — je suis là pour t'accompagner vers ta meilleure version. »
+            </blockquote>
+          </div>
+
+          <div class="about__tags reveal">
+            <span>🎓 Éducateur sportif diplômé</span>
+            <span>💪 Coach en ligne</span>
+            <span>✈️ Nomade digital</span>
+            <span>📈 Entrepreneur</span>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- INSCRIPTION FORM -->
-  <section class="signup-section" id="signup">
+  <!-- LIFESTYLE BAND -->
+  <section class="lifestyle">
+    <div class="lifestyle__track">
+      <div class="lifestyle__items">
+        <span>Liberté géographique</span><span>•</span>
+        <span>Revenus récurrents</span><span>•</span>
+        <span>Voyager + coacher</span><span>•</span>
+        <span>Coach nomade</span><span>•</span>
+        <span>Avantages voyages</span><span>•</span>
+        <span>Sport & Business</span><span>•</span>
+        <span>Liberté géographique</span><span>•</span>
+        <span>Revenus récurrents</span><span>•</span>
+        <span>Voyager + coacher</span><span>•</span>
+        <span>Coach nomade</span><span>•</span>
+        <span>Avantages voyages</span><span>•</span>
+        <span>Sport & Business</span><span>•</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- BUSINESS SECTION -->
+  <section class="business section" id="business">
     <div class="container">
-      <div class="signup-wrapper">
-        <div class="signup-text">
-          <p class="section-eyebrow">Première étape</p>
-          <h2 class="section-title">Restez informé(e)<br /><em>sans engagement</em></h2>
-          <p class="signup-desc">
-            Inscrivez-vous et recevez toutes les informations sur MWR Life directement
-            dans votre boîte mail. Gratuit, sans engagement, sans spam.
-          </p>
-          <ul class="signup-perks">
-            <li><span>✓</span> Présentation complète de l'opportunité</li>
-            <li><span>✓</span> Témoignages de membres actifs</li>
-            <li><span>✓</span> Accès à une session d'information en ligne</li>
-            <li><span>✓</span> Contact direct avec moi pour toute question</li>
-          </ul>
+      <div class="section-header reveal">
+        <p class="section-tag">Revenu complémentaire</p>
+        <h2 class="section-title">Un flux de revenus récurrents<br /><em>en parallèle de ton activité</em></h2>
+        <p class="section-sub">Notre business génère un revenu complémentaire mensuel qui s'accumule avec le temps — sans empiéter sur ton coaching, sans contrainte géographique. Un complément qui finance ta liberté.</p>
+      </div>
+
+      <div class="business__grid">
+        <div class="business__feature reveal">
+          <div class="business__icon">💰</div>
+          <h3>Revenus récurrents</h3>
+          <p>Un système qui génère des commissions mensuelles automatiques. Tu construis une fois, tu perçois dans la durée — même pendant que tu voyages ou que tu coaches.</p>
         </div>
+        <div class="business__feature reveal reveal--delay-1">
+          <div class="business__icon">📱</div>
+          <h3>100% en ligne</h3>
+          <p>Tout se gère depuis ton téléphone, où que tu sois dans le monde. Ton activité complémentaire tourne en arrière-plan, sans contrainte de lieu ni d'horaire.</p>
+        </div>
+        <div class="business__feature reveal reveal--delay-2">
+          <div class="business__icon">🤝</div>
+          <h3>Recommandation naturelle</h3>
+          <p>Pas de vente forcée. Tu partages ce que tu vis réellement — des avantages voyages concrets — et tu es rémunéré pour ça. Simple et authentique.</p>
+        </div>
+        <div class="business__feature reveal reveal--delay-3">
+          <div class="business__icon">📊</div>
+          <h3>Effet cumulatif</h3>
+          <p>Chaque personne que tu accompagnes fait grossir tes revenus passifs. Le système prend de l'ampleur mois après mois, sans effort supplémentaire de ta part.</p>
+        </div>
+      </div>
 
-        <div class="signup-form-box">
-          <form id="signupForm" novalidate>
-            <div class="form-group">
-              <label for="firstName">Prénom</label>
-              <input type="text" id="firstName" name="firstName" placeholder="Votre prénom" required />
-              <span class="field-error" id="firstNameError"></span>
-            </div>
-            <div class="form-group">
-              <label for="lastName">Nom</label>
-              <input type="text" id="lastName" name="lastName" placeholder="Votre nom" required />
-              <span class="field-error" id="lastNameError"></span>
-            </div>
-            <div class="form-group">
-              <label for="email">Adresse e-mail</label>
-              <input type="email" id="email" name="email" placeholder="vous@exemple.com" required />
-              <span class="field-error" id="emailError"></span>
-            </div>
-            <div class="form-group">
-              <label for="phone">Téléphone <span class="optional">(optionnel)</span></label>
-              <input type="tel" id="phone" name="phone" placeholder="+33 6 00 00 00 00" />
-            </div>
-            <div class="form-check">
-              <input type="checkbox" id="consent" required />
-              <label for="consent">J'accepte de recevoir des informations sur MWR Life par e-mail. Désinscription possible à tout moment.</label>
-              <span class="field-error" id="consentError"></span>
-            </div>
-            <button type="submit" class="btn-submit" id="submitBtn">
-              <span class="btn-text">Recevoir les informations</span>
-              <span class="btn-loading" style="display:none;">Envoi en cours…</span>
-            </button>
-          </form>
+      <div class="business__disclaimer reveal">
+        <p>Cette activité complémentaire ne constitue pas une promesse de revenus garantis. Les résultats varient selon l'implication de chacun.</p>
+      </div>
+    </div>
+  </section>
 
-          <div class="success-message" id="successMessage" style="display:none;">
-            <div class="success-icon">✦</div>
-            <h3>Merci pour votre inscription !</h3>
-            <p>Vous allez recevoir un e-mail de bienvenue très prochainement. À très bientôt !</p>
+  <!-- CONTACT / CTA -->
+  <section class="contact section" id="contact">
+    <div class="contact__bg">
+      <div class="hero__orb hero__orb--1" style="opacity:0.3"></div>
+      <div class="hero__orb hero__orb--2" style="opacity:0.2"></div>
+    </div>
+    <div class="container">
+      <div class="contact__inner reveal">
+        <p class="section-tag">Passe à l'action</p>
+        <h2 class="contact__title">Ton prochain voyage<br /><em>commence ici</em></h2>
+        <p class="contact__sub">Accède immédiatement à des milliers d'avantages voyages. Et si tu veux en faire un complément de revenus, on en parle aussi.</p>
+
+        <div class="contact__cards">
+          <div class="contact__card">
+            <span class="contact__card-icon">✈️</span>
+            <h3>Je veux voyager moins cher</h3>
+            <p>Accède aux avantages voyages dès aujourd'hui.</p>
+            <a href="inscription/index.html" class="btn btn--gold">Rejoindre</a>
+          </div>
+          <div class="contact__card contact__card--outline">
+            <span class="contact__card-icon">💬</span>
+            <h3>Je veux en savoir plus</h3>
+            <p>Une question sur le travel ou le business ? Arthur répond directement.</p>
+            <a href="https://wa.me/VOTRE_NUMERO" class="btn btn--ghost" target="_blank">Contacter Arthur</a>
           </div>
         </div>
       </div>
@@ -160,14 +282,25 @@
   <!-- FOOTER -->
   <footer class="footer">
     <div class="container">
-      <div class="footer-inner">
-        <div class="logo">MWR <span>LIFE</span></div>
-        <p class="footer-tagline">Vivez plus. Gagnez plus. Partagez plus.</p>
-        <p class="footer-legal">© 2025 – Site non officiel d'un membre indépendant MWR Life. Ce site a été créé à titre personnel pour partager une opportunité.</p>
+      <div class="footer__top">
+        <div class="footer__brand">
+          <div class="nav__logo">AM</div>
+          <p>Coach sportif · Nomade digital · Entrepreneur</p>
+        </div>
+        <div class="footer__links">
+          <a href="#travel">Travel</a>
+          <a href="#about">À propos</a>
+          <a href="#business">Business</a>
+          <a href="inscription/index.html">Inscription</a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>© 2025 Arthur Mongondry</p>
+        <p>Les avantages voyages présentés sont issus de notre partenariat. Les revenus complémentaires ne sont pas garantis.</p>
       </div>
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="scrypt.js"></script>
 </body>
 </html>
