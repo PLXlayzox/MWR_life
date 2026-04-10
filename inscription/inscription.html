@@ -3,73 +3,70 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Inscription – MWR Life</title>
+  <title>Inscription — Arthur Mongondry</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../style.css" />
   <link rel="stylesheet" href="inscription.css" />
-
-  <!-- EmailJS SDK -->
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 </head>
 <body class="inscription-page">
 
-  <!-- NAVBAR -->
-  <nav class="navbar scrolled">
-    <div class="nav-inner">
-      <a href="../index.html" class="logo">MWR <span>LIFE</span></a>
-      <a href="../index.html" class="nav-back">← Retour</a>
-    </div>
+  <!-- NAV -->
+  <nav class="nav scrolled">
+    <div class="nav__logo">AM</div>
+    <a href="../index.html" class="nav__back">← Retour</a>
   </nav>
 
   <!-- MAIN -->
-  <main class="inscription-main">
+  <main class="insc-main">
 
-    <!-- COLONNE GAUCHE : INFO -->
+    <!-- PANNEAU GAUCHE -->
     <div class="insc-left">
       <div class="insc-left-inner">
-        <p class="section-eyebrow">Rejoignez-nous</p>
-        <h1 class="insc-title">Recevez toutes<br /><em>les informations</em></h1>
+        <p class="section-tag">Rejoins-nous</p>
+        <h1 class="insc-title">Reçois toutes<br /><em>les informations</em></h1>
         <p class="insc-desc">
-          Laissez votre adresse e-mail et recevez immédiatement une présentation
-          complète de l'opportunité MWR Life. Aucun engagement, aucun spam.
+          Laisse ton adresse e-mail et reçois immédiatement une présentation
+          complète des avantages voyages et de l'opportunité complémentaire.
+          Aucun engagement, aucun spam.
         </p>
 
         <div class="insc-features">
           <div class="insc-feat">
             <span class="feat-icon">✦</span>
             <div>
-              <strong>Présentation complète</strong>
-              <p>Découvrez comment fonctionne MWR Life et ses avantages.</p>
+              <strong>Avantages voyages exclusifs</strong>
+              <p>Vols, hôtels, croisières — des tarifs réservés aux professionnels.</p>
             </div>
           </div>
           <div class="insc-feat">
             <span class="feat-icon">◈</span>
             <div>
-              <strong>Opportunité de revenus</strong>
-              <p>Comprenez comment générer des revenus supplémentaires.</p>
+              <strong>Revenu complémentaire récurrent</strong>
+              <p>Une option pour générer un flux de revenus passifs en parallèle.</p>
             </div>
           </div>
           <div class="insc-feat">
             <span class="feat-icon">⬡</span>
             <div>
-              <strong>Contact direct</strong>
-              <p>Je vous réponds personnellement pour toute question.</p>
+              <strong>Contact direct avec Arthur</strong>
+              <p>Je réponds personnellement à chaque question.</p>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- COLONNE DROITE : FORMULAIRE -->
+    <!-- PANNEAU DROIT : FORMULAIRE -->
     <div class="insc-right">
-      <div class="insc-form-card">
+      <div class="insc-card">
 
         <!-- FORMULAIRE -->
         <form id="inscriptionForm" novalidate>
-          <h2 class="form-title">Votre inscription</h2>
-          <p class="form-subtitle">Remplissez ce formulaire et recevez les infos par mail.</p>
+          <h2 class="form-title">Ton inscription</h2>
+          <p class="form-subtitle">Remplis ce formulaire et reçois les infos par mail.</p>
 
           <div class="form-row">
             <div class="form-group">
@@ -98,7 +95,7 @@
           <div class="form-check">
             <input type="checkbox" id="consent" required />
             <label for="consent">
-              J'accepte de recevoir des informations sur MWR Life par e-mail.
+              J'accepte de recevoir des informations par e-mail.
               Désinscription possible à tout moment.
             </label>
           </div>
@@ -116,27 +113,26 @@
 
         <!-- SUCCÈS -->
         <div class="success-block" id="successBlock" style="display:none;">
-          <div class="success-anim">✦</div>
+          <div class="success-icon">✦</div>
           <h2>Mail envoyé !</h2>
           <p>
-            Bonjour <strong id="successName"></strong>, vous allez recevoir
-            toutes les informations sur MWR Life dans quelques instants.
-            Vérifiez aussi vos spams si besoin.
+            Bonjour <strong id="successName"></strong>, tu vas recevoir
+            toutes les informations dans quelques instants.
+            Vérifie aussi tes spams si besoin.
           </p>
-          <a href="../index.html" class="btn-submit" style="display:inline-block; text-align:center; text-decoration:none; margin-top: 8px;">
+          <a href="../index.html" class="btn-submit" style="display:inline-block; text-align:center; text-decoration:none;">
             ← Retour à l'accueil
           </a>
         </div>
 
-        <!-- ERREUR RÉSEAU -->
+        <!-- ERREUR -->
         <div class="error-block" id="errorBlock" style="display:none;">
-          <p>⚠️ Une erreur est survenue. Veuillez réessayer ou me contacter directement a travel.business.ba@gmail.com.</p>
+          <p>⚠️ Une erreur est survenue. Réessaye ou contacte Arthur directement.</p>
           <button onclick="resetForm()" class="btn-retry">Réessayer</button>
         </div>
 
       </div>
     </div>
-
   </main>
 
   <script src="inscription.js"></script>
