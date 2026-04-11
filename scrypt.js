@@ -72,3 +72,19 @@ counters.forEach(el => counterObserver.observe(el));
 document.addEventListener('keydown', e => {
   if (e.key === 'Escape') closeMenu();
 });
+// CONTACT POPUP
+function openContactPopup() {
+  document.getElementById('contactPopup').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeContactPopup(e) {
+  if (!e || e.target === document.getElementById('contactPopup') || e.currentTarget.classList.contains('contact-popup__close')) {
+    document.getElementById('contactPopup').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+}
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') closeContactPopup({ target: document.getElementById('contactPopup') });
+});
