@@ -440,9 +440,12 @@ a { color: inherit; text-decoration: none; }
   display: grid;
   grid-template-columns: 1fr 1.2fr;
   gap: 80px;
-  align-items: center;
+  align-items: start;
 }
-.about__image-wrap { position: relative; }
+.about__image-wrap {
+  position: relative;
+  padding-bottom: 76px; /* espace pour la floating card en -52px */
+}
 .about__image-frame {
   position: relative;
   border-radius: var(--radius);
@@ -481,8 +484,9 @@ a { color: inherit; text-decoration: none; }
 }
 .about__floating-card {
   position: absolute;
-  bottom: -24px;
-  right: -24px;
+  bottom: -52px;
+  left: 0;
+  right: 0;
   background: var(--navy-2);
   border: 1px solid var(--border);
   border-radius: var(--radius);
@@ -719,6 +723,7 @@ a { color: inherit; text-decoration: none; }
   }
   .about__inner {
     gap: 56px;
+    align-items: start;
   }
 }
 
@@ -738,6 +743,7 @@ a { color: inherit; text-decoration: none; }
     grid-template-columns: 1fr;
     gap: 48px;
   }
+  .about__image-wrap { padding-bottom: 0; }
   .about__image-frame { aspect-ratio: 4/3; max-width: 480px; margin: 0 auto; }
   .about__floating-card { right: 0; bottom: -16px; }
 
